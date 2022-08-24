@@ -7,8 +7,7 @@ public class Usuario {
 
         programador.setNome("José");
         System.out.println(programador.getNome());
-
-
+        
         Agricultor agricultor = new Agricultor();
         agricultor.fazerAniversario();
 
