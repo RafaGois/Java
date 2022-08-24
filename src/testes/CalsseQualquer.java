@@ -6,5 +6,4 @@ public class CalsseQualquer {
         System.out.println("Olá Mundo");
         System.out.println("Testee");
     }
-
 }
