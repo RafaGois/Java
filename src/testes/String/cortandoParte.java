@@ -2,6 +2,8 @@ package testes.String;
 
 public class cortandoParte {
 
+
+
     public static void main(String[] args) {
 
     }
