@@ -7,9 +7,9 @@ public class contain {
     public static void main(String[] args) {
         ArrayList<String> lista = new ArrayList<>();
 
-        lista.add("Rafael");
-        lista.add("Fontana");
-        lista.add("Becker");
+        lista.add("iin");
+        lista.add("minha");
+        lista.add("vuaida");
         lista.add("Gois");
 
         if (lista.contains("Gois")) {
