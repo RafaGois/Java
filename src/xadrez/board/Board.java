@@ -25,14 +25,23 @@ public class Board {
     }
 
     public Piece piece (int rows, int column) {
+        if (!positionExists(rows, column)) {
+            throw new BoardException("Board n existe");
+        }
         return pieces[rows][column];
     }
 
     public Piece piece (Position position) {
+        if (!positionExists(position)) {
+            throw new BoardException("Fora do tamanho do board");
+        }
         return pieces[position.getRow()][position.getColumn()];
     }
 
     public void placePiece (Piece piece,Position position){
+        if (thereIsAPiece(position)) {
+            throw new BoardException("Ja tem peca aq vacilao");
+        }
         pieces[position.getRow()][position.getColumn()] = piece;
         piece.position = position;
 
