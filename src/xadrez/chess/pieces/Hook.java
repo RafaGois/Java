@@ -12,8 +12,6 @@ public class Hook extends ChessPiece {
 
     @Override
     public String toString() {
-        return "Hook{" +
-                "position=" + position +
-                '}';
+        return "H";
     }
 }
