@@ -1,6 +1,8 @@
 package xadrez.chess;
 
 import xadrez.board.Board;
+import xadrez.board.Position;
+import xadrez.chess.pieces.Hook;
 
 public class ChessMatch {
 
@@ -18,5 +20,9 @@ public class ChessMatch {
             }
         }
         return mat;
+    }
+
+    private void inialSetup () {
+        board.placePiece(new Hook(board,Color.WHITE),new Position(2,1));
     }
 }
