@@ -14,4 +14,10 @@ public class Hook extends ChessPiece {
     public String toString() {
         return "H";
     }
+
+    @Override
+    public boolean[][] possibleMovies() {
+        boolean [][] mat = new boolean[getBoard().getRows()][getBoard().getColumns()];
+        return new boolean[0][];
+    }
 }

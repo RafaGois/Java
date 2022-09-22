@@ -50,6 +50,9 @@ public class ChessMatch {
         if (!board.thereIsAPiece(source)) {
             throw new ChessException("Nao existe peca na posicao selecionada");
         }
+        if (!board.piece(source).isThereAnyPossibleMove()) {
+            throw new ChessException("Nao pode mover a peca para aqui");
+        }
     }
 
     private void placeNewPiece (char column, int row,ChessPiece piece) {
