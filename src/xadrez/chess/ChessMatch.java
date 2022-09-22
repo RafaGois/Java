@@ -1,6 +1,7 @@
 package xadrez.chess;
 
 import xadrez.board.Board;
+import xadrez.board.Piece;
 import xadrez.board.Position;
 import xadrez.chess.pieces.Hook;
 import xadrez.chess.pieces.King;
@@ -22,6 +23,33 @@ public class ChessMatch {
             }
         }
         return mat;
+    }
+
+    public ChessPiece performChessMove (ChessPosition sourcePosition, ChessPosition targetPosition) {
+
+        Position source = sourcePosition.toPosition();
+        Position target = targetPosition.toPosition();
+
+        validateSourcePosition(source);
+
+        Piece capturedPiece = makeMovie(source,target);
+
+        return (ChessPiece) capturedPiece;
+    }
+
+    private Piece makeMovie(Position source, Position target) {
+        Piece p = board.removePiece(source);
+        Piece capturedPiece = board.removePiece(target);
+
+        board.placePiece(p,target);
+
+        return capturedPiece;
+    }
+
+    private void validateSourcePosition(Position source) {
+        if (!board.thereIsAPiece(source)) {
+            throw new ChessException("Nao existe peca na posicao selecionada");
+        }
     }
 
     private void placeNewPiece (char column, int row,ChessPiece piece) {
