@@ -31,6 +31,10 @@ public class Program {
                 System.out.println("Destino:");
                 ChessPosition target = UI.readChessPosition(sc);
 
+                boolean [][] possibleMovies  = chessMatch.possibleMovies(source);
+                UI.clear();
+                UI.printBoard(chessMatch.getPieces(),possibleMovies);
+
                 ChessPiece capturedPiece = chessMatch.performChessMove(source,target);
             } catch (ChessException e) {
                 System.out.println(e.getMessage());
