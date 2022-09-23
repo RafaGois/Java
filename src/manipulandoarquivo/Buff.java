@@ -6,12 +6,9 @@ import java.io.IOException;
 
 public class Buff {
 
-
-
     public static void main(String[] args) {
 
         String path = "C:\\Users\\Rafael.Gois\\Documents\\testeJAVA.txt";
-
 
         try (BufferedReader br = new BufferedReader(new FileReader(path))){
 
