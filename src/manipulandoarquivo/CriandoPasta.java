@@ -3,7 +3,7 @@ package manipulandoarquivo;
 import java.io.File;
 import java.util.Scanner;
 
-public class Teste {
+public class CriandoPasta {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
@@ -31,5 +31,4 @@ public class Teste {
 
         sc.close();
     }
-
 }
