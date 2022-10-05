@@ -1,9 +1,12 @@
-package predicate;
+package consumer;
+
+import predicate.Product;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Consumer;
 
-public class TesteList {
+public class Porcentagem {
 
     public static void main(String[] args) {
         List<Product> products = new ArrayList<>();
@@ -13,12 +16,11 @@ public class TesteList {
         products.add(new Product("Tablet",350.50));
         products.add(new Product("HD Case",80.90));
 
-        //remove da lista com uma condicao
-        //vai remover p(elemento da list) se ele tiver o atributo preco maior q 100
-        products.removeIf(p -> p.getPreco() >= 100);
+        //atualiza o preco de cada elemento da lista
+        products.forEach(new AtualizacaoPreco());
 
-        for (Product p : products) {
-            System.out.println(p.getNome() + " - " + p.getPreco());
-        }
+        //imprimindo com foreach
+        products.forEach(System.out::println);
     }
+
 }
