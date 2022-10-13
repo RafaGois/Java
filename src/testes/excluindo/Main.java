@@ -28,22 +28,35 @@ class Main
 
         Main main = new Main();
 
+        int sucessCount = 0;
+        int failCount = 0;
+
+        System.out.println("");
+
         for (int i = 0; i < main.retoraArr().size(); i++) {
 
             File file = new File("C:\\Users\\Rafael.Gois\\Pictures\\testeExclui\\"+main.retoraArr().get(i));
 
             boolean result = file.delete();
             if (result) {
-                System.out.println("File "+main.retoraArr().get(i)+" is successfully deleted.");
+                System.out.println("Arquivo :"+main.retoraArr().get(i)+" apagado com sucesso!");
+                sucessCount++;
             }
             else {
-                System.out.println("File "+main.retoraArr().get(i)+" deletion failed.");
+                System.out.println("Falha ao apagar arquivo: "+main.retoraArr().get(i));
+                failCount++;
             }
         }
+
+        System.out.println("");
+        System.out.println("Total de arquivos a serem apagados: " + main.retoraArr().size());
+        System.out.println("Total de arquivos apagados com sucesso: " + sucessCount);
+        System.out.println("Total de arquivos não apagados: " + failCount);
+
     }
 
     public ArrayList<String> retoraArr () {
-        File file = new File("C:\\Users\\Rafael.Gois\\Pictures\\nome_arquivos_a_excluir.txt");
+        File file = new File("C:\\Users\\Rafael.Gois\\Music\\Java\\nome_arquivos_a_excluir.txt");
         Scanner sc = null;
 
         ArrayList<String> planos = new ArrayList<>();
