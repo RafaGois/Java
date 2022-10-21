@@ -10,7 +10,11 @@ public class ArrExist {
     private static String maquinasFromServer = "Zocca;Hass;Corte Laser";
 
     public static void main(String[] args) {
-        trataMaquinasFromServer(maquinasFromServer);
+
+        for (Integer val : trataMaquinasFromServer(maquinasFromServer)) {
+            System.out.print(val+"\t");
+        }
+
     }
 
     private static ArrayList<Integer> trataMaquinasFromServer (String input) {

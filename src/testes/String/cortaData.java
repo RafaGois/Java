@@ -3,15 +3,11 @@ package testes.String;
 public class cortaData {
 
     public static void main(String[] args) {
-        String input = "12:00:00";
+        String input = "2022-10-17";
 
-        String [] inputSeparado = input.split("");
-        String output = "";
+        System.out.println(input.substring(5,7));
 
-        for(int i = 0; i < 5; i++) {
-            output += inputSeparado[i];
-        }
-        System.out.println(output);
+
     }
 
 }
